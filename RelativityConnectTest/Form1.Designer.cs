@@ -74,7 +74,7 @@
             this.btConnect.Location = new System.Drawing.Point(352, 337);
             this.btConnect.Name = "btConnect";
             this.btConnect.Size = new System.Drawing.Size(75, 23);
-            this.btConnect.TabIndex = 2;
+            this.btConnect.TabIndex = 11;
             this.btConnect.Text = "Connect";
             this.btConnect.UseVisualStyleBackColor = true;
             this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
@@ -92,7 +92,7 @@
             this.tbUsername.Location = new System.Drawing.Point(155, 80);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(172, 20);
-            this.tbUsername.TabIndex = 4;
+            this.tbUsername.TabIndex = 2;
             // 
             // lbPassword
             // 
@@ -126,7 +126,7 @@
             this.tbServicesURL.Location = new System.Drawing.Point(155, 55);
             this.tbServicesURL.Name = "tbServicesURL";
             this.tbServicesURL.Size = new System.Drawing.Size(272, 20);
-            this.tbServicesURL.TabIndex = 7;
+            this.tbServicesURL.TabIndex = 1;
             // 
             // tbClientSecret
             // 
@@ -134,21 +134,21 @@
             this.tbClientSecret.Name = "tbClientSecret";
             this.tbClientSecret.PasswordChar = '*';
             this.tbClientSecret.Size = new System.Drawing.Size(272, 20);
-            this.tbClientSecret.TabIndex = 9;
+            this.tbClientSecret.TabIndex = 7;
             // 
             // tbClientID
             // 
             this.tbClientID.Location = new System.Drawing.Point(155, 189);
             this.tbClientID.Name = "tbClientID";
             this.tbClientID.Size = new System.Drawing.Size(272, 20);
-            this.tbClientID.TabIndex = 10;
+            this.tbClientID.TabIndex = 6;
             // 
             // tbIdentityTokenURL
             // 
             this.tbIdentityTokenURL.Location = new System.Drawing.Point(155, 163);
             this.tbIdentityTokenURL.Name = "tbIdentityTokenURL";
             this.tbIdentityTokenURL.Size = new System.Drawing.Size(272, 20);
-            this.tbIdentityTokenURL.TabIndex = 11;
+            this.tbIdentityTokenURL.TabIndex = 5;
             // 
             // label2
             // 
@@ -183,7 +183,7 @@
             this.rbOAuth2.Location = new System.Drawing.Point(155, 256);
             this.rbOAuth2.Name = "rbOAuth2";
             this.rbOAuth2.Size = new System.Drawing.Size(61, 17);
-            this.rbOAuth2.TabIndex = 15;
+            this.rbOAuth2.TabIndex = 8;
             this.rbOAuth2.Text = "OAuth2";
             this.rbOAuth2.UseVisualStyleBackColor = true;
             this.rbOAuth2.CheckedChanged += new System.EventHandler(this.rbOAuth2_CheckedChanged);
@@ -194,7 +194,7 @@
             this.rbWinAuth.Location = new System.Drawing.Point(155, 279);
             this.rbWinAuth.Name = "rbWinAuth";
             this.rbWinAuth.Size = new System.Drawing.Size(66, 17);
-            this.rbWinAuth.TabIndex = 16;
+            this.rbWinAuth.TabIndex = 9;
             this.rbWinAuth.Text = "WinAuth";
             this.rbWinAuth.UseVisualStyleBackColor = true;
             this.rbWinAuth.CheckedChanged += new System.EventHandler(this.rbWinAuth_CheckedChanged);
@@ -214,7 +214,7 @@
             this.rbImportAPI.Location = new System.Drawing.Point(155, 302);
             this.rbImportAPI.Name = "rbImportAPI";
             this.rbImportAPI.Size = new System.Drawing.Size(71, 17);
-            this.rbImportAPI.TabIndex = 18;
+            this.rbImportAPI.TabIndex = 10;
             this.rbImportAPI.Text = "ImportAPI";
             this.rbImportAPI.UseVisualStyleBackColor = true;
             this.rbImportAPI.CheckedChanged += new System.EventHandler(this.rbImportAPI_CheckedChanged);
@@ -225,7 +225,7 @@
             this.llShowPassword.Location = new System.Drawing.Point(333, 109);
             this.llShowPassword.Name = "llShowPassword";
             this.llShowPassword.Size = new System.Drawing.Size(34, 13);
-            this.llShowPassword.TabIndex = 19;
+            this.llShowPassword.TabIndex = 4;
             this.llShowPassword.TabStop = true;
             this.llShowPassword.Text = "Show";
             this.llShowPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.llShowPassword_MouseDown);
@@ -236,7 +236,7 @@
             this.btReset.Location = new System.Drawing.Point(22, 337);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
-            this.btReset.TabIndex = 20;
+            this.btReset.TabIndex = 12;
             this.btReset.Text = "Reset";
             this.btReset.UseVisualStyleBackColor = true;
             this.btReset.Click += new System.EventHandler(this.btReset_Click);

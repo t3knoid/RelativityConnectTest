@@ -121,7 +121,7 @@ namespace RelativityConnectTest
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed enumerating workspaces using OAuth2. " + ex.Message + "\n" + ex.StackTrace, "OAuth2 Authorization");
+                    MessageBox.Show("Failed authenticating using OAuth2. " + ex.Message + "\n" + ex.StackTrace, "OAuth2 Authorization");
                 }
             }
 
@@ -148,7 +148,7 @@ namespace RelativityConnectTest
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Failed enumerating workspaces using Windows Auth. " + ex.Message + "\n" + ex.StackTrace, "Windows Authorization");
+                    MessageBox.Show("Failed authenticating using Windows Auth. " + ex.Message + "\n" + ex.StackTrace, "Windows Authorization");
                 }
             }
 
