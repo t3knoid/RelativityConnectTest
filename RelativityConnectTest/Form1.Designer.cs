@@ -73,7 +73,7 @@
             // 
             // btConnect
             // 
-            this.btConnect.Location = new System.Drawing.Point(176, 376);
+            this.btConnect.Location = new System.Drawing.Point(176, 378);
             this.btConnect.Name = "btConnect";
             this.btConnect.Size = new System.Drawing.Size(75, 23);
             this.btConnect.TabIndex = 11;
@@ -182,7 +182,7 @@
             // rbOAuth2
             // 
             this.rbOAuth2.AutoSize = true;
-            this.rbOAuth2.Location = new System.Drawing.Point(155, 290);
+            this.rbOAuth2.Location = new System.Drawing.Point(155, 292);
             this.rbOAuth2.Name = "rbOAuth2";
             this.rbOAuth2.Size = new System.Drawing.Size(61, 17);
             this.rbOAuth2.TabIndex = 8;
@@ -193,7 +193,7 @@
             // rbWinAuth
             // 
             this.rbWinAuth.AutoSize = true;
-            this.rbWinAuth.Location = new System.Drawing.Point(155, 313);
+            this.rbWinAuth.Location = new System.Drawing.Point(155, 315);
             this.rbWinAuth.Name = "rbWinAuth";
             this.rbWinAuth.Size = new System.Drawing.Size(66, 17);
             this.rbWinAuth.TabIndex = 9;
@@ -204,7 +204,7 @@
             // rbImportAPI
             // 
             this.rbImportAPI.AutoSize = true;
-            this.rbImportAPI.Location = new System.Drawing.Point(155, 336);
+            this.rbImportAPI.Location = new System.Drawing.Point(155, 338);
             this.rbImportAPI.Name = "rbImportAPI";
             this.rbImportAPI.Size = new System.Drawing.Size(71, 17);
             this.rbImportAPI.TabIndex = 10;
@@ -226,7 +226,7 @@
             // 
             // btReset
             // 
-            this.btReset.Location = new System.Drawing.Point(364, 251);
+            this.btReset.Location = new System.Drawing.Point(364, 252);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
             this.btReset.TabIndex = 12;
@@ -255,7 +255,7 @@
             // cbWinAuthPassthru
             // 
             this.cbWinAuthPassthru.AutoSize = true;
-            this.cbWinAuthPassthru.Location = new System.Drawing.Point(247, 314);
+            this.cbWinAuthPassthru.Location = new System.Drawing.Point(247, 316);
             this.cbWinAuthPassthru.Name = "cbWinAuthPassthru";
             this.cbWinAuthPassthru.Size = new System.Drawing.Size(74, 17);
             this.cbWinAuthPassthru.TabIndex = 23;
@@ -266,7 +266,7 @@
             // cbImportAPIPassthru
             // 
             this.cbImportAPIPassthru.AutoSize = true;
-            this.cbImportAPIPassthru.Location = new System.Drawing.Point(247, 337);
+            this.cbImportAPIPassthru.Location = new System.Drawing.Point(247, 339);
             this.cbImportAPIPassthru.Name = "cbImportAPIPassthru";
             this.cbImportAPIPassthru.Size = new System.Drawing.Size(74, 17);
             this.cbImportAPIPassthru.TabIndex = 24;
@@ -276,9 +276,9 @@
             // 
             // gbConnectionType
             // 
-            this.gbConnectionType.Location = new System.Drawing.Point(12, 284);
+            this.gbConnectionType.Location = new System.Drawing.Point(12, 276);
             this.gbConnectionType.Name = "gbConnectionType";
-            this.gbConnectionType.Size = new System.Drawing.Size(427, 76);
+            this.gbConnectionType.Size = new System.Drawing.Size(427, 90);
             this.gbConnectionType.TabIndex = 25;
             this.gbConnectionType.TabStop = false;
             this.gbConnectionType.Text = "Connection Type";
