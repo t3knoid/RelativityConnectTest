@@ -94,61 +94,61 @@ namespace RelativityConnectTest
             RestServer = this.tbRestURL.Text;
             ServicesServer = this.tbServicesURL.Text;
 
-            if (rbAuth2.Checked)
-            {
-                try
-                {
-                    OAuth2 oauth2 = new OAuth2
-                    {
-                        RestUri = GetRestHostURL(),
-                        ServicesUri = GetServicesURL(),
-                        IdentityServerTokenUrl = GetIdentityServerTokenHostURL(),
-                        ClientID = this.tbClientID.Text,
-                        ClientSecret = this.tbClientSecret.Text
+            //if (rbAuth2.Checked)
+            //{
+            //    try
+            //    {
+            //        OAuth2 oauth2 = new OAuth2
+            //        {
+            //            RestUri = GetRestHostURL(),
+            //            ServicesUri = GetServicesURL(),
+            //            IdentityServerTokenUrl = GetIdentityServerTokenHostURL(),
+            //            ClientID = this.tbClientID.Text,
+            //            ClientSecret = this.tbClientSecret.Text
 
-                    };
-                    bool success = oauth2.RetrieveRelativityWorkspaces();
-                    if (success)
-                    {
-                        MessageBox.Show("Successful", "Oauth2", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed", "Oauth2", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed enumerating workspaces using OAuth2. " + ex.Message + "\n" + ex.StackTrace, "OAuth2 Authorization");
-                }
-            }
+            //        };
+            //        bool success = oauth2.RetrieveRelativityWorkspaces();
+            //        if (success)
+            //        {
+            //            MessageBox.Show("Successful", "Oauth2", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Failed", "Oauth2", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Failed enumerating workspaces using OAuth2. " + ex.Message + "\n" + ex.StackTrace, "OAuth2 Authorization");
+            //    }
+            //}
 
-            if (rbWinAuth.Checked)
-            {
-                try
-                {
-                    WinAuth winauth = new WinAuth
-                    {
-                        RestURL = GetRestHostURL(),
-                        ServicesURL = GetServicesURL(),
-                        Username = this.tbUsername.Text,
-                        Password = this.tbPassword.Text
-                    };
-                    bool success = winauth.RetrieveRelativityWorkspaces();
-                    if (success)
-                    {
-                        MessageBox.Show("Successful", "WinAuth", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed", "WinAuth", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Failed enumerating workspaces using Windows Auth. " + ex.Message + "\n" + ex.StackTrace, "Windows Authorization");
-                }
-            }
+            //if (rbWinAuth.Checked)
+            //{
+            //    try
+            //    {
+            //        WinAuth winauth = new WinAuth
+            //        {
+            //            RestURL = GetRestHostURL(),
+            //            ServicesURL = GetServicesURL(),
+            //            Username = this.tbUsername.Text,
+            //            Password = this.tbPassword.Text
+            //        };
+            //        bool success = winauth.RetrieveRelativityWorkspaces();
+            //        if (success)
+            //        {
+            //            MessageBox.Show("Successful", "WinAuth", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Failed", "WinAuth", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Failed enumerating workspaces using Windows Auth. " + ex.Message + "\n" + ex.StackTrace, "Windows Authorization");
+            //    }
+            //}
 
             if (rbImportAPI.Checked)
             {
@@ -182,6 +182,16 @@ namespace RelativityConnectTest
             }
             string toDisplay = toDisplay = String.Join(Environment.NewLine, wslist);
             MessageBox.Show(toDisplay, title);
+        }
+
+        private void llShowPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.tbPassword.UseSystemPasswordChar = false;
+        }
+
+        private void llShowPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.tbPassword.UseSystemPasswordChar = true;
         }
 
         //public async Task<global::Relativity.Services.Objects.DataContracts.QueryResult> RetrieveRelativityWorkspaces2()

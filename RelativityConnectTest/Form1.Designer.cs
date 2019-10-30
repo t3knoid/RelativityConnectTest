@@ -47,6 +47,7 @@
             this.rbWinAuth = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.rbImportAPI = new System.Windows.Forms.RadioButton();
+            this.llShowPassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // tbRestURL
@@ -82,6 +83,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(172, 20);
             this.tbPassword.TabIndex = 3;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // tbUsername
             // 
@@ -129,6 +131,7 @@
             // 
             this.tbClientSecret.Location = new System.Drawing.Point(155, 208);
             this.tbClientSecret.Name = "tbClientSecret";
+            this.tbClientSecret.PasswordChar = '*';
             this.tbClientSecret.Size = new System.Drawing.Size(272, 20);
             this.tbClientSecret.TabIndex = 9;
             // 
@@ -215,11 +218,24 @@
             this.rbImportAPI.Text = "ImportAPI";
             this.rbImportAPI.UseVisualStyleBackColor = true;
             // 
+            // llShowPassword
+            // 
+            this.llShowPassword.AutoSize = true;
+            this.llShowPassword.Location = new System.Drawing.Point(333, 102);
+            this.llShowPassword.Name = "llShowPassword";
+            this.llShowPassword.Size = new System.Drawing.Size(34, 13);
+            this.llShowPassword.TabIndex = 19;
+            this.llShowPassword.TabStop = true;
+            this.llShowPassword.Text = "Show";
+            this.llShowPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.llShowPassword_MouseDown);
+            this.llShowPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.llShowPassword_MouseUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 384);
+            this.Controls.Add(this.llShowPassword);
             this.Controls.Add(this.rbImportAPI);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rbWinAuth);
@@ -268,6 +284,7 @@
         private System.Windows.Forms.RadioButton rbWinAuth;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rbImportAPI;
+        private System.Windows.Forms.LinkLabel llShowPassword;
     }
 }
 
