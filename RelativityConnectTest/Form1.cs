@@ -307,7 +307,7 @@ namespace RelativityConnectTest
             {
                 this.cbImportAPIPassthru.Enabled = false;
             }
-            if (this.rbImportAPI.Checked)
+            if (this.cbImportAPIPassthru.Checked)
             {
                 this.tbUsername.Enabled = false;
                 this.tbPassword.Enabled = false;
