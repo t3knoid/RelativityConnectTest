@@ -53,6 +53,7 @@
             this.cbWinAuthPassthru = new System.Windows.Forms.CheckBox();
             this.cbImportAPIPassthru = new System.Windows.Forms.CheckBox();
             this.gbConnectionType = new System.Windows.Forms.GroupBox();
+            this.gbConnectionType.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbRestURL
@@ -182,7 +183,7 @@
             // rbOAuth2
             // 
             this.rbOAuth2.AutoSize = true;
-            this.rbOAuth2.Location = new System.Drawing.Point(155, 292);
+            this.rbOAuth2.Location = new System.Drawing.Point(10, 19);
             this.rbOAuth2.Name = "rbOAuth2";
             this.rbOAuth2.Size = new System.Drawing.Size(61, 17);
             this.rbOAuth2.TabIndex = 8;
@@ -193,7 +194,7 @@
             // rbWinAuth
             // 
             this.rbWinAuth.AutoSize = true;
-            this.rbWinAuth.Location = new System.Drawing.Point(155, 315);
+            this.rbWinAuth.Location = new System.Drawing.Point(10, 42);
             this.rbWinAuth.Name = "rbWinAuth";
             this.rbWinAuth.Size = new System.Drawing.Size(66, 17);
             this.rbWinAuth.TabIndex = 9;
@@ -204,7 +205,7 @@
             // rbImportAPI
             // 
             this.rbImportAPI.AutoSize = true;
-            this.rbImportAPI.Location = new System.Drawing.Point(155, 338);
+            this.rbImportAPI.Location = new System.Drawing.Point(10, 65);
             this.rbImportAPI.Name = "rbImportAPI";
             this.rbImportAPI.Size = new System.Drawing.Size(71, 17);
             this.rbImportAPI.TabIndex = 10;
@@ -226,7 +227,7 @@
             // 
             // btReset
             // 
-            this.btReset.Location = new System.Drawing.Point(364, 252);
+            this.btReset.Location = new System.Drawing.Point(364, 253);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
             this.btReset.TabIndex = 12;
@@ -255,7 +256,7 @@
             // cbWinAuthPassthru
             // 
             this.cbWinAuthPassthru.AutoSize = true;
-            this.cbWinAuthPassthru.Location = new System.Drawing.Point(247, 316);
+            this.cbWinAuthPassthru.Location = new System.Drawing.Point(102, 43);
             this.cbWinAuthPassthru.Name = "cbWinAuthPassthru";
             this.cbWinAuthPassthru.Size = new System.Drawing.Size(74, 17);
             this.cbWinAuthPassthru.TabIndex = 23;
@@ -266,7 +267,7 @@
             // cbImportAPIPassthru
             // 
             this.cbImportAPIPassthru.AutoSize = true;
-            this.cbImportAPIPassthru.Location = new System.Drawing.Point(247, 339);
+            this.cbImportAPIPassthru.Location = new System.Drawing.Point(102, 66);
             this.cbImportAPIPassthru.Name = "cbImportAPIPassthru";
             this.cbImportAPIPassthru.Size = new System.Drawing.Size(74, 17);
             this.cbImportAPIPassthru.TabIndex = 24;
@@ -276,6 +277,11 @@
             // 
             // gbConnectionType
             // 
+            this.gbConnectionType.Controls.Add(this.cbImportAPIPassthru);
+            this.gbConnectionType.Controls.Add(this.rbOAuth2);
+            this.gbConnectionType.Controls.Add(this.cbWinAuthPassthru);
+            this.gbConnectionType.Controls.Add(this.rbWinAuth);
+            this.gbConnectionType.Controls.Add(this.rbImportAPI);
             this.gbConnectionType.Location = new System.Drawing.Point(12, 276);
             this.gbConnectionType.Name = "gbConnectionType";
             this.gbConnectionType.Size = new System.Drawing.Size(427, 90);
@@ -288,13 +294,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 414);
-            this.Controls.Add(this.cbImportAPIPassthru);
-            this.Controls.Add(this.cbWinAuthPassthru);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.llShowPassword);
-            this.Controls.Add(this.rbImportAPI);
-            this.Controls.Add(this.rbWinAuth);
-            this.Controls.Add(this.rbOAuth2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -317,6 +318,8 @@
             this.Name = "Form1";
             this.Text = "Relativity Connectivity Test";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.gbConnectionType.ResumeLayout(false);
+            this.gbConnectionType.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
