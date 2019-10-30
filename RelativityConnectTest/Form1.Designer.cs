@@ -51,6 +51,8 @@
             this.btReset = new System.Windows.Forms.Button();
             this.gbOauth2 = new System.Windows.Forms.GroupBox();
             this.tbStandardAuth = new System.Windows.Forms.GroupBox();
+            this.cbWinAuthPassthru = new System.Windows.Forms.CheckBox();
+            this.cbImportAPIPassthru = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbRestURL
@@ -259,11 +261,35 @@
             this.tbStandardAuth.TabStop = false;
             this.tbStandardAuth.Text = "Standard Auth";
             // 
+            // cbWinAuthPassthru
+            // 
+            this.cbWinAuthPassthru.AutoSize = true;
+            this.cbWinAuthPassthru.Location = new System.Drawing.Point(247, 280);
+            this.cbWinAuthPassthru.Name = "cbWinAuthPassthru";
+            this.cbWinAuthPassthru.Size = new System.Drawing.Size(74, 17);
+            this.cbWinAuthPassthru.TabIndex = 23;
+            this.cbWinAuthPassthru.Text = "Pass Thru";
+            this.cbWinAuthPassthru.UseVisualStyleBackColor = true;
+            this.cbWinAuthPassthru.CheckedChanged += new System.EventHandler(this.cbWinAuthPassthru_CheckedChanged);
+            // 
+            // cbImportAPIPassthru
+            // 
+            this.cbImportAPIPassthru.AutoSize = true;
+            this.cbImportAPIPassthru.Location = new System.Drawing.Point(247, 303);
+            this.cbImportAPIPassthru.Name = "cbImportAPIPassthru";
+            this.cbImportAPIPassthru.Size = new System.Drawing.Size(74, 17);
+            this.cbImportAPIPassthru.TabIndex = 24;
+            this.cbImportAPIPassthru.Text = "Pass Thru";
+            this.cbImportAPIPassthru.UseVisualStyleBackColor = true;
+            this.cbImportAPIPassthru.CheckedChanged += new System.EventHandler(this.cbImportAPIPassthru_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 377);
+            this.Controls.Add(this.cbImportAPIPassthru);
+            this.Controls.Add(this.cbWinAuthPassthru);
             this.Controls.Add(this.btReset);
             this.Controls.Add(this.llShowPassword);
             this.Controls.Add(this.rbImportAPI);
@@ -321,6 +347,8 @@
         private System.Windows.Forms.Button btReset;
         private System.Windows.Forms.GroupBox gbOauth2;
         private System.Windows.Forms.GroupBox tbStandardAuth;
+        private System.Windows.Forms.CheckBox cbWinAuthPassthru;
+        private System.Windows.Forms.CheckBox cbImportAPIPassthru;
     }
 }
 

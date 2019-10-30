@@ -129,12 +129,21 @@ namespace RelativityConnectTest
             {
                 try
                 {
+                    string username = "";
+                    string password = "";
+
+                    if (!cbWinAuthPassthru.Checked)
+                    {
+                        username = this.tbUsername.Text;
+                        password = this.tbPassword.Text;
+                    }
+
                     WinAuth winauth = new WinAuth
                     {
                         RestURL = GetRestHostURL(),
                         ServicesURL = GetServicesURL(),
-                        Username = this.tbUsername.Text,
-                        Password = this.tbPassword.Text
+                        Username = username,
+                        Password = password
                     };
                     bool success = winauth.RetrieveRelativityWorkspaces();
                     if (success)
@@ -157,7 +166,17 @@ namespace RelativityConnectTest
                 try
                 {
                     iAPI iapi = new iAPI();
-                    bool success = iapi.Login(this.tbUsername.Text, this.tbPassword.Text, GetWebAPIURL());
+                    string username = "";
+                    string password = "";                       
+
+                    if (!cbWinAuthPassthru.Checked)
+                    {
+                        username = this.tbUsername.Text;
+                        password = this.tbPassword.Text;
+                    }
+
+                    bool success = iapi.Login(username, password, GetWebAPIURL());                       
+
                     if (success)
                     {
                         MessageBox.Show("Successful", "ImportAPI", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -236,8 +255,24 @@ namespace RelativityConnectTest
 
         private void rbWinAuth_CheckedChanged(object sender, EventArgs e)
         {
-            this.tbUsername.Enabled = true;
-            this.tbPassword.Enabled = true;
+            if (this.rbWinAuth.Checked)
+            {
+                this.cbWinAuthPassthru.Enabled = true;
+            }
+            else
+            {
+                this.cbWinAuthPassthru.Enabled = false;
+            }
+            if (this.cbWinAuthPassthru.Checked)
+            {
+                this.tbUsername.Enabled = false;
+                this.tbPassword.Enabled = false;
+            }
+            else
+            {
+                this.tbUsername.Enabled = true;
+                this.tbPassword.Enabled = true;
+            }
             this.tbClientID.Enabled = false;
             this.tbClientSecret.Enabled = false;
             this.tbIdentityTokenURL.Enabled = false;
@@ -258,13 +293,57 @@ namespace RelativityConnectTest
 
         private void rbImportAPI_CheckedChanged(object sender, EventArgs e)
         {
-            this.tbUsername.Enabled = true;
-            this.tbPassword.Enabled = true;
+            if (this.rbImportAPI.Checked)
+            {
+                this.cbImportAPIPassthru.Enabled = true;
+            }
+            else
+            {
+                this.cbImportAPIPassthru.Enabled = false;
+            }
+            if (this.rbImportAPI.Checked)
+            {
+                this.tbUsername.Enabled = false;
+                this.tbPassword.Enabled = false;
+            }
+            else
+            {
+                this.tbUsername.Enabled = true;
+                this.tbPassword.Enabled = true;
+            }
             this.tbClientID.Enabled = false;
             this.tbClientSecret.Enabled = false;
             this.tbIdentityTokenURL.Enabled = false;
             this.tbRestURL.Enabled = true;
             this.tbServicesURL.Enabled = false;
+        }
+
+        private void cbWinAuthPassthru_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cbWinAuthPassthru.Checked)
+            {
+                this.tbUsername.Enabled = true;
+                this.tbPassword.Enabled = true;
+            }
+            else
+            {
+                this.tbUsername.Enabled = false;
+                this.tbPassword.Enabled = false;
+            }
+        }
+
+        private void cbImportAPIPassthru_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!cbImportAPIPassthru.Checked)
+            {
+                this.tbUsername.Enabled = true;
+                this.tbPassword.Enabled = true;
+            }
+            else
+            {
+                this.tbUsername.Enabled = false;
+                this.tbPassword.Enabled = false;
+            }
         }
 
         //public async Task<global::Relativity.Services.Objects.DataContracts.QueryResult> RetrieveRelativityWorkspaces2()
