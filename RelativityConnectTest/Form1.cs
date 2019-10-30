@@ -225,7 +225,10 @@ namespace RelativityConnectTest
         {
             Settings1 settings = new Settings1();
             this.tbUsername.Text = settings.Username;
-            this.tbPassword.Text = settings.Password;
+            if (!string.IsNullOrEmpty(settings.Password))
+            {
+                this.tbPassword.Text = Helpers.Decrypt(settings.Password);
+            }
             this.tbRestURL.Text = settings.RESTUrl;
             this.tbServicesURL.Text = settings.ServicesUrl;
             this.tbIdentityTokenURL.Text = settings.IdentityServerTokenUrl;
@@ -236,7 +239,10 @@ namespace RelativityConnectTest
             Settings1 settings = new Settings1();
             settings.IdentityServerTokenUrl = this.tbIdentityTokenURL.Text;
             settings.Username = this.tbUsername.Text;
-            settings.Password = this.tbPassword.Text;
+            if (!string.IsNullOrEmpty(this.tbPassword.Text))
+            {
+                settings.Password = Helpers.Encrypt(this.tbPassword.Text);
+            }
             settings.RESTUrl = this.tbRestURL.Text;
             settings.ServicesUrl = this.tbServicesURL.Text;
             settings.IdentityServerTokenUrl = this.tbIdentityTokenURL.Text;
@@ -345,38 +351,6 @@ namespace RelativityConnectTest
                 this.tbPassword.Enabled = false;
             }
         }
-
-        //public async Task<global::Relativity.Services.Objects.DataContracts.QueryResult> RetrieveRelativityWorkspaces2()
-        //{
-        //    Relativity.Services.Objects.DataContracts.QueryResult result = null;
-
-        //    try
-        //    {
-
-        //        //  var serviceManager = Relativity.CustomPages.ConnectionHelper.Helper().GetServicesManager();
-        //        //using (IObjectManager objectManager = serviceManager.CreateProxy<IObjectManager>(Relativity.API.ExecutionIdentity.CurrentUser))
-        //        using (IObjectManager objectManager = GetServiceFactory().CreateProxy<IObjectManager>())
-        //        {
-        //            NameValueObject currentWorkspaceInfo = new NameValueObject();
-        //            var queryRequest = new Relativity.Services.Objects.DataContracts.QueryRequest()
-        //            {
-        //                ObjectType = new global::Relativity.Services.Objects.DataContracts.ObjectTypeRef { ArtifactTypeID = 8},                             
-        //                Fields = new List<global::Relativity.Services.Objects.DataContracts.FieldRef>()	//array of fields to return.  ArtifactId will always be returned.
-        //                {
-        //                    new global::Relativity.Services.Objects.DataContracts.FieldRef { ArtifactID = new kCura.Relativity.Client.DTOs.FieldValue("Name").ArtifactID },
-        //                    new global::Relativity.Services.Objects.DataContracts.FieldRef { ArtifactID = new kCura.Relativity.Client.DTOs.FieldValue("Status").ArtifactID },
-        //                },
-        //            };
-        //            result = await objectManager.QueryAsync(-1, queryRequest, 1, 100);
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error loading workspace: " + ex.Message);
-        //    }
-
-        //    return result;
-        //}
 
     }
 }

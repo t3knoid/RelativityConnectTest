@@ -18,7 +18,32 @@ namespace RelativityConnectTest
             return base64UsernameAndPassword;
         }
 
-        // encrypt
+        /// <summary>
+        /// Encodes a given string and encyrpts it
+        /// </summary>
+        /// <param name="strData"></param>
+        /// <returns></returns>
+        public static string Encrypt(string strData)
+        {
+            return Convert.ToBase64String(Encrypt(Encoding.UTF8.GetBytes(strData)));
+            // reference https://msdn.microsoft.com/en-us/library/ds4kkd55(v=vs.110).aspx
+        }
+
+        /// <summary>
+        /// Decodes a given string decrypts it
+        /// </summary>
+        /// <param name="strData"></param>
+        /// <returns></returns>
+        public static string Decrypt(string strData)
+        {
+            return Encoding.UTF8.GetString(Decrypt(Convert.FromBase64String(strData)));
+            // reference https://msdn.microsoft.com/en-us/library/system.convert.frombase64string(v=vs.110).aspx
+        }
+        /// <summary>
+        /// Encrypts a set of bytes
+        /// </summary>
+        /// <param name="strData"></param>
+        /// <returns></returns>
         public static byte[] Encrypt(byte[] strData)
         {
             PasswordDeriveBytes passbytes =
@@ -41,7 +66,11 @@ namespace RelativityConnectTest
             return memstream.ToArray();
         }
 
-        // decrypt
+        /// <summary>
+        /// Decrypts a given set of bytes
+        /// </summary>
+        /// <param name="strData"></param>
+        /// <returns></returns>
         public static byte[] Decrypt(byte[] strData)
         {
             PasswordDeriveBytes passbytes =
