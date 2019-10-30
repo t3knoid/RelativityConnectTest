@@ -67,10 +67,6 @@ namespace RelativityConnectTest
     }
     public static class Global
     {
-        // set password
-        public const string strPassword = "LetMeIn99$";
-
-        // set permutations
         public const String strPermutation = "ouiveyxaqtd";
         public const Int32 bytePermutation1 = 0x19;
         public const Int32 bytePermutation2 = 0x59;
