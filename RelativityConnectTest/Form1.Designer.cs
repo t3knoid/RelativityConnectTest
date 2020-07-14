@@ -28,19 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbRestURL = new System.Windows.Forms.TextBox();
+            this.tbBaseURL = new System.Windows.Forms.TextBox();
             this.lbServer = new System.Windows.Forms.Label();
             this.btConnect = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbUsername = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbServicesURL = new System.Windows.Forms.TextBox();
             this.tbClientSecret = new System.Windows.Forms.TextBox();
             this.tbClientID = new System.Windows.Forms.TextBox();
-            this.tbIdentityTokenURL = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.rbOAuth2 = new System.Windows.Forms.RadioButton();
@@ -56,21 +52,21 @@
             this.gbConnectionType.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbRestURL
+            // tbBaseURL
             // 
-            this.tbRestURL.Location = new System.Drawing.Point(155, 29);
-            this.tbRestURL.Name = "tbRestURL";
-            this.tbRestURL.Size = new System.Drawing.Size(272, 20);
-            this.tbRestURL.TabIndex = 0;
+            this.tbBaseURL.Location = new System.Drawing.Point(155, 29);
+            this.tbBaseURL.Name = "tbBaseURL";
+            this.tbBaseURL.Size = new System.Drawing.Size(272, 20);
+            this.tbBaseURL.TabIndex = 0;
             // 
             // lbServer
             // 
             this.lbServer.AutoSize = true;
             this.lbServer.Location = new System.Drawing.Point(19, 32);
             this.lbServer.Name = "lbServer";
-            this.lbServer.Size = new System.Drawing.Size(52, 13);
+            this.lbServer.Size = new System.Drawing.Size(93, 13);
             this.lbServer.TabIndex = 1;
-            this.lbServer.Text = "REST Url";
+            this.lbServer.Text = "Relativity Base Url";
             // 
             // btConnect
             // 
@@ -84,7 +80,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(155, 106);
+            this.tbPassword.Location = new System.Drawing.Point(155, 97);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(172, 20);
             this.tbPassword.TabIndex = 3;
@@ -92,7 +88,7 @@
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(155, 80);
+            this.tbUsername.Location = new System.Drawing.Point(155, 71);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(172, 20);
             this.tbUsername.TabIndex = 2;
@@ -100,7 +96,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(19, 109);
+            this.lbPassword.Location = new System.Drawing.Point(19, 100);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(53, 13);
             this.lbPassword.TabIndex = 5;
@@ -109,31 +105,15 @@
             // lbUsername
             // 
             this.lbUsername.AutoSize = true;
-            this.lbUsername.Location = new System.Drawing.Point(19, 83);
+            this.lbUsername.Location = new System.Drawing.Point(19, 74);
             this.lbUsername.Name = "lbUsername";
             this.lbUsername.Size = new System.Drawing.Size(55, 13);
             this.lbUsername.TabIndex = 6;
             this.lbUsername.Text = "Username";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Services Url";
-            // 
-            // tbServicesURL
-            // 
-            this.tbServicesURL.Location = new System.Drawing.Point(155, 55);
-            this.tbServicesURL.Name = "tbServicesURL";
-            this.tbServicesURL.Size = new System.Drawing.Size(272, 20);
-            this.tbServicesURL.TabIndex = 1;
-            // 
             // tbClientSecret
             // 
-            this.tbClientSecret.Location = new System.Drawing.Point(155, 210);
+            this.tbClientSecret.Location = new System.Drawing.Point(155, 194);
             this.tbClientSecret.Name = "tbClientSecret";
             this.tbClientSecret.PasswordChar = '*';
             this.tbClientSecret.Size = new System.Drawing.Size(272, 20);
@@ -141,31 +121,15 @@
             // 
             // tbClientID
             // 
-            this.tbClientID.Location = new System.Drawing.Point(155, 184);
+            this.tbClientID.Location = new System.Drawing.Point(155, 168);
             this.tbClientID.Name = "tbClientID";
             this.tbClientID.Size = new System.Drawing.Size(272, 20);
             this.tbClientID.TabIndex = 6;
             // 
-            // tbIdentityTokenURL
-            // 
-            this.tbIdentityTokenURL.Location = new System.Drawing.Point(155, 158);
-            this.tbIdentityTokenURL.Name = "tbIdentityTokenURL";
-            this.tbIdentityTokenURL.Size = new System.Drawing.Size(272, 20);
-            this.tbIdentityTokenURL.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Identity Server Token Url";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 187);
+            this.label3.Location = new System.Drawing.Point(19, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 13;
@@ -174,7 +138,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 213);
+            this.label4.Location = new System.Drawing.Point(19, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 14;
@@ -216,7 +180,7 @@
             // llShowPassword
             // 
             this.llShowPassword.AutoSize = true;
-            this.llShowPassword.Location = new System.Drawing.Point(333, 109);
+            this.llShowPassword.Location = new System.Drawing.Point(333, 100);
             this.llShowPassword.Name = "llShowPassword";
             this.llShowPassword.Size = new System.Drawing.Size(34, 13);
             this.llShowPassword.TabIndex = 4;
@@ -227,7 +191,7 @@
             // 
             // btReset
             // 
-            this.btReset.Location = new System.Drawing.Point(364, 253);
+            this.btReset.Location = new System.Drawing.Point(364, 239);
             this.btReset.Name = "btReset";
             this.btReset.Size = new System.Drawing.Size(75, 23);
             this.btReset.TabIndex = 12;
@@ -239,7 +203,7 @@
             // 
             this.gbOauth2.Location = new System.Drawing.Point(12, 145);
             this.gbOauth2.Name = "gbOauth2";
-            this.gbOauth2.Size = new System.Drawing.Size(427, 100);
+            this.gbOauth2.Size = new System.Drawing.Size(427, 87);
             this.gbOauth2.TabIndex = 21;
             this.gbOauth2.TabStop = false;
             this.gbOauth2.Text = "OAuth2 Settings";
@@ -282,9 +246,9 @@
             this.gbConnectionType.Controls.Add(this.cbWinAuthPassthru);
             this.gbConnectionType.Controls.Add(this.rbWinAuth);
             this.gbConnectionType.Controls.Add(this.rbImportAPI);
-            this.gbConnectionType.Location = new System.Drawing.Point(12, 276);
+            this.gbConnectionType.Location = new System.Drawing.Point(12, 265);
             this.gbConnectionType.Name = "gbConnectionType";
-            this.gbConnectionType.Size = new System.Drawing.Size(427, 90);
+            this.gbConnectionType.Size = new System.Drawing.Size(427, 91);
             this.gbConnectionType.TabIndex = 25;
             this.gbConnectionType.TabStop = false;
             this.gbConnectionType.Text = "Connection Type";
@@ -298,19 +262,15 @@
             this.Controls.Add(this.llShowPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbIdentityTokenURL);
             this.Controls.Add(this.tbClientID);
             this.Controls.Add(this.tbClientSecret);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbServicesURL);
             this.Controls.Add(this.lbUsername);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.lbServer);
-            this.Controls.Add(this.tbRestURL);
+            this.Controls.Add(this.tbBaseURL);
             this.Controls.Add(this.gbOauth2);
             this.Controls.Add(this.tbStandardAuth);
             this.Controls.Add(this.gbConnectionType);
@@ -327,19 +287,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tbRestURL;
+        private System.Windows.Forms.TextBox tbBaseURL;
         private System.Windows.Forms.Label lbServer;
         private System.Windows.Forms.Button btConnect;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label lbUsername;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbServicesURL;
         private System.Windows.Forms.TextBox tbClientSecret;
         private System.Windows.Forms.TextBox tbClientID;
-        private System.Windows.Forms.TextBox tbIdentityTokenURL;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton rbOAuth2;

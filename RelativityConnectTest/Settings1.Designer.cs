@@ -12,7 +12,7 @@ namespace RelativityConnectTest {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.6.0.0")]
     internal sealed partial class Settings1 : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings1 defaultInstance = ((Settings1)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings1())));
@@ -49,37 +49,13 @@ namespace RelativityConnectTest {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://devaon.myrelativity.legal")]
-        public string RESTUrl {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://relativitypoc01.ameclients.sf.local")]
+        public string BaseURL {
             get {
-                return ((string)(this["RESTUrl"]));
+                return ((string)(this["BaseURL"]));
             }
             set {
-                this["RESTUrl"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://devaonapi.myrelativity.legal")]
-        public string ServicesUrl {
-            get {
-                return ((string)(this["ServicesUrl"]));
-            }
-            set {
-                this["ServicesUrl"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://aon.myrelativity.legal/Relativity/Identity/connect/token")]
-        public string IdentityServerTokenUrl {
-            get {
-                return ((string)(this["IdentityServerTokenUrl"]));
-            }
-            set {
-                this["IdentityServerTokenUrl"] = value;
+                this["BaseURL"] = value;
             }
         }
         

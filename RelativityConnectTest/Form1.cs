@@ -21,22 +21,13 @@ namespace RelativityConnectTest
     public partial class Form1 : Form
     {
 
-        string RestServer
+        string BaseURLServer
         { 
-            get { return _restserver;} 
-            set { _restserver = value; }
+            get { return _baseurlserver;} 
+            set { _baseurlserver = value; }
         }
 
-        static string _restserver;
-
-        string ServicesServer
-        { 
-            get { return _servicesserver;} 
-            set { _servicesserver = value; }
-        }
-
-        static string _servicesserver;
-
+        static string _baseurlserver;        
 
         public Form1()
         {
@@ -45,24 +36,24 @@ namespace RelativityConnectTest
 
         static public string GetServicesURL()
         {
-            return String.Format("{0}/relativity.services", _servicesserver);
+            return String.Format("{0}/relativity.services", _baseurlserver);
         }
 
         static public string GetRestHostURL()
         {
-            return String.Format("{0}/relativity.Rest/API", _restserver);
+            return String.Format("{0}/relativity.Rest/API", _baseurlserver);
         }
 
         static public string GetIdentityServerTokenHostURL()
         {
-            return String.Format("{0}/Relativity/Identity/connect/token", _restserver);
+            return String.Format("{0}/Relativity/Identity/connect/token", _baseurlserver);
         }
 
         static public Uri GetServiceHostURI()
         {
             // string serverName = String.Format("{0}.{1}", Environment.MachineName, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName);
 
-            Uri uri = new Uri(string.Format("{0}/relativity.services/", _servicesserver));
+            Uri uri = new Uri(string.Format("{0}/relativity.services/", _baseurlserver));
             return uri;
         }
         
@@ -70,7 +61,7 @@ namespace RelativityConnectTest
         {
             // string serverName = String.Format("{0}.{1}", Environment.MachineName, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName);
 
-            Uri uri = new Uri(string.Format("{0}/relativity.rest/", _restserver));
+            Uri uri = new Uri(string.Format("{0}/relativity.rest/", _baseurlserver));
             return uri;
         }
 
@@ -78,7 +69,7 @@ namespace RelativityConnectTest
         {
             // string serverName = String.Format("{0}.{1}", Environment.MachineName, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName);
 
-            Uri uri = new Uri(string.Format("{0}/relativitywebapi/", _restserver));
+            Uri uri = new Uri(string.Format("{0}/relativitywebapi/", _baseurlserver));
             return uri;
         }
 
@@ -86,16 +77,26 @@ namespace RelativityConnectTest
         {
             // string serverName = String.Format("{0}.{1}", Environment.MachineName, System.Net.NetworkInformation.IPGlobalProperties.GetIPGlobalProperties().DomainName);
 
-            return string.Format("{0}/relativitywebapi/", _restserver);
+            return string.Format("{0}/relativitywebapi/", _baseurlserver);
         }
 
 
         private void btConnect_Click(object sender, EventArgs e)
-        {           
-            RestServer = this.tbRestURL.Text;
-            ServicesServer = this.tbServicesURL.Text;
-            SaveSettings();
+        {
+            try
+            {
+                // Make sure to grab base URL of what the user entered
+                var uri = new Uri(this.tbBaseURL.Text);
+                BaseURLServer = uri.GetLeftPart(System.UriPartial.Authority).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed getting base URL. Check to make sure you entered a valid URL.");
+                return;
+            }
 
+            SaveSettings();
+                
             if (rbOAuth2.Checked)
             {
                 try
@@ -229,23 +230,18 @@ namespace RelativityConnectTest
             {
                 this.tbPassword.Text = Helpers.Decrypt(settings.Password);
             }
-            this.tbRestURL.Text = settings.RESTUrl;
-            this.tbServicesURL.Text = settings.ServicesUrl;
-            this.tbIdentityTokenURL.Text = settings.IdentityServerTokenUrl;
+            this.tbBaseURL.Text = settings.BaseURL;
         }
 
         private void SaveSettings()
         {
             Settings1 settings = new Settings1();
-            settings.IdentityServerTokenUrl = this.tbIdentityTokenURL.Text;
             settings.Username = this.tbUsername.Text;
             if (!string.IsNullOrEmpty(this.tbPassword.Text))
             {
                 settings.Password = Helpers.Encrypt(this.tbPassword.Text);
             }
-            settings.RESTUrl = this.tbRestURL.Text;
-            settings.ServicesUrl = this.tbServicesURL.Text;
-            settings.IdentityServerTokenUrl = this.tbIdentityTokenURL.Text;
+            settings.BaseURL = this.tbBaseURL.Text;
             settings.Save();
         }
 
@@ -253,9 +249,7 @@ namespace RelativityConnectTest
         {
             this.tbUsername.Text = Settings1.Default.Properties["Username"].DefaultValue.ToString();
             this.tbPassword.Text = Settings1.Default.Properties["Password"].DefaultValue.ToString();
-            this.tbRestURL.Text = Settings1.Default.Properties["RESTUrl"].DefaultValue.ToString();
-            this.tbServicesURL.Text = Settings1.Default.Properties["ServicesUrl"].DefaultValue.ToString();
-            this.tbIdentityTokenURL.Text = Settings1.Default.Properties["IdentityServerTokenUrl"].DefaultValue.ToString();
+            this.tbBaseURL.Text = Settings1.Default.Properties["RESTUrl"].DefaultValue.ToString();
             SaveSettings();
         }
 
@@ -281,9 +275,7 @@ namespace RelativityConnectTest
             }
             this.tbClientID.Enabled = false;
             this.tbClientSecret.Enabled = false;
-            this.tbIdentityTokenURL.Enabled = false;
-            this.tbRestURL.Enabled = true;
-            this.tbServicesURL.Enabled = true;
+            this.tbBaseURL.Enabled = true;
         }
 
         private void rbOAuth2_CheckedChanged(object sender, EventArgs e)
@@ -292,9 +284,7 @@ namespace RelativityConnectTest
             this.tbPassword.Enabled = false;
             this.tbClientID.Enabled = true;
             this.tbClientSecret.Enabled = true;
-            this.tbIdentityTokenURL.Enabled = true;
-            this.tbRestURL.Enabled = false;
-            this.tbServicesURL.Enabled = false;
+            this.tbBaseURL.Enabled = false;            
         }
 
         private void rbImportAPI_CheckedChanged(object sender, EventArgs e)
@@ -319,9 +309,7 @@ namespace RelativityConnectTest
             }
             this.tbClientID.Enabled = false;
             this.tbClientSecret.Enabled = false;
-            this.tbIdentityTokenURL.Enabled = false;
-            this.tbRestURL.Enabled = true;
-            this.tbServicesURL.Enabled = false;
+            this.tbBaseURL.Enabled = true;
         }
 
         private void cbWinAuthPassthru_CheckedChanged(object sender, EventArgs e)

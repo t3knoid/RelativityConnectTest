@@ -8,14 +8,8 @@
     <Setting Name="Password" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="RESTUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://devaon.myrelativity.legal</Value>
-    </Setting>
-    <Setting Name="ServicesUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://devaonapi.myrelativity.legal</Value>
-    </Setting>
-    <Setting Name="IdentityServerTokenUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://aon.myrelativity.legal/Relativity/Identity/connect/token</Value>
+    <Setting Name="BaseURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://relativitypoc01.ameclients.sf.local</Value>
     </Setting>
     <Setting Name="ClientID" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

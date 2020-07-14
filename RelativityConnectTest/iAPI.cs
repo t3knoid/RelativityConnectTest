@@ -1,10 +1,9 @@
-﻿using System;
+﻿using kCura.Relativity.ImportAPI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using kCura.Relativity.ImportAPI;
-using kCura.Relativity.ImportAPI.Data;
 
 namespace RelativityConnectTest
 {
